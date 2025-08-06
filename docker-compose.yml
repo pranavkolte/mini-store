@@ -1,0 +1,8 @@
+services:
+  mini-store-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mini-store-backend
+    ports:
+      - "8000:8000"
