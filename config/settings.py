@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'drf_yasg',
 
     # local apps
-    'authentication', 
+    'authentication',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -136,4 +137,14 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+}
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+        }
+    }
 }
