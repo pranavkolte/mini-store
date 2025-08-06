@@ -23,5 +23,3 @@ Welcome to **mini-store**! Follow these steps to get started:
 ## 5. Explore Endpoints
 
 - Once authorized, you can interact with the available API endpoints.
-
-For more information, see the [Example Domain documentation](https://www.iana.org/domains/example).
