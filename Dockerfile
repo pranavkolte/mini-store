@@ -20,6 +20,9 @@ RUN pip install --no-cache-dir uv
 COPY pyproject.toml .
 RUN uv pip install --system --no-cache -r pyproject.toml
 
+# Install Gunicorn explicitly
+RUN uv pip install --system --no-cache gunicorn>=22.0.0
+
 COPY gunicorn.conf.py /app/gunicorn.conf.py
 
 COPY entrypoint.sh /app/entrypoint.sh
@@ -28,6 +31,9 @@ RUN sed -i 's/\r$//' /app/entrypoint.sh
 
 # Copy only necessary app files
 COPY . .
+
+# Create directories for static and media files
+RUN mkdir -p /app/staticfiles /app/mediafiles
 
 EXPOSE 8000
 

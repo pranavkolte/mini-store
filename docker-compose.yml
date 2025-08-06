@@ -6,3 +6,10 @@ services:
     container_name: mini-store-backend
     ports:
       - "8000:8000"
+    volumes:
+      - static_volume:/app/staticfiles
+      - media_volume:/app/mediafiles
+
+volumes:
+  static_volume:
+  media_volume:
